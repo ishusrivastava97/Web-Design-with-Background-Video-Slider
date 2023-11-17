@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <header>
+        <a href="" class="brand" >Travel</a>
+        <div class="menu-btn"></div>
+        <div class="navigation">
+            <div class="navigation-item">
+                <a href="">Home</a>
+                <a href="">About</a>
+                <a href="">Explore</a>
+                <a href="">Gallery</a>
+                <a href="">Contact</a>
+            </div>
+        </div>
+    </header>
+    <section class="Home" >
+        <video class="video-slide active" src="/campfire_-_31466 (540p).mp4" autoplay muted loop ></video>
+        <video class="video-slide" src="/car_-_11490 (1080p).mp4" autoplay muted loop ></video>
+        <video class="video-slide" src="/lighthouse_-_1917 (720p).mp4" autoplay muted loop ></video>
+        <video class="video-slide" src="/istockphoto-1308779422-640_adpp_is.mp4" autoplay muted loop ></video>
+        <video class="video-slide" src="/park_-_119195 (540p).mp4" autoplay muted loop ></video>
+        <div class="content active">
+            <h1>Wonderful. <span>Island</span> <br></h1>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quod non harum inventore sint iure quaerat deserunt aperiam? Possimus beatae id esse, quo ex sapiente repellendus voluptatem molestias pariatur eveniet aperiam.</p>
+            <a href="">Read More</a>
+        </div>
+        <div class="content">
+            <h1>Camping. <span>Enjoy</span> <br></h1>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quod non harum inventore sint iure quaerat deserunt
+                aperiam? Possimus beatae id esse, quo ex sapiente repellendus voluptatem molestias pariatur eveniet aperiam.</p>
+            <a href="">Read More</a>
+        </div>
+        <div class="content">
+            <h1>Adventure. <span>Off Road</span> <br></h1>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quod non harum inventore sint iure quaerat deserunt
+                aperiam? Possimus beatae id esse, quo ex sapiente repellendus voluptatem molestias pariatur eveniet aperiam.</p>
+            <a href="">Read More</a>
+        </div>
+        <div class="content">
+            <h1>Road Trip. <span>Together</span> <br></h1>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quod non harum inventore sint iure quaerat deserunt
+                aperiam? Possimus beatae id esse, quo ex sapiente repellendus voluptatem molestias pariatur eveniet aperiam.</p>
+            <a href="">Read More</a>
+        </div>
+        <div class="content">
+            <h1>Feel Nature. <span>Relax</span> <br></h1>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quod non harum inventore sint iure quaerat deserunt
+                aperiam? Possimus beatae id esse, quo ex sapiente repellendus voluptatem molestias pariatur eveniet aperiam.</p>
+            <a href="">Read More</a>
+        </div>
+
+        <div class="media-icon">
+            <a href=""><i class="fa-brands fa-facebook-f"></i></a>
+            <a href=""><i class="fa-brands fa-instagram"></i></a>
+            <a href=""><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+        <div class="slider-navigation">
+            <div class="nav-btn active"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+        </div>
+    </section>
+    <script type="text/javascript" >
+        const menuBtn = document.querySelector(".menu-btn");
+        const navigation = document.querySelector(".navigation");
+        menuBtn.addEventListener("click", () => {
+            menuBtn.classList.toggle("active");
+            navigation.classList.toggle("active");
+        })
+        // video ka slider banane ka code
+
+        const btns = document.querySelectorAll(".nav-btn");
+        const slides = document.querySelectorAll(".video-slide");
+        const contents = document.querySelectorAll(".content");
+        var sliderNav = function (manual) {
+            btns.forEach((btn) => {
+                btn.classList.remove("active");
+            })
+            slides.forEach((slide) => {
+                slide.classList.remove("active");
+            })
+            contents.forEach((content) => {
+                content.classList.remove("active");
+            })
+           btns[manual].classList.add("active"); 
+           slides[manual].classList.add("active"); 
+           contents[manual].classList.add("active"); 
+        }
+        btns.forEach((btn, i) => {
+            btn.addEventListener("click", () => {
+                sliderNav(i);
+            })
+        });
+    </script>
+</body>
+</html>
